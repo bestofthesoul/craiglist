@@ -1,0 +1,45 @@
+
+
+<div class="container">
+	<h1> Welcome to Category: <%= @category.name %></h1>
+
+<!-- #UPPER PART -->
+	<div align="center"><br>
+	    <h2>The Posts:</h2>
+	      <!-- FOR CREATE NEW POSTS-->
+
+	      <form action = "/categories/<%= @category.id %>/posts/new" method="get">
+	      	<input type = "submit" value = "Create New Post">
+	      </form>
+	    <br>
+  	</div>
+
+<!-- DOWN PART -->
+	<div align="center">
+    <!-- FOR READ INDEX(POSTS) -->
+	  	<%if @posts %>
+	  		<% @posts.each do |x| %>
+	    	<!-- FOR READ SHOW one post-->
+		     	<a href="/categories/<%= @category.id %>/posts/<%=x.id%>"><%=x.desc%>
+		    	<!-- FOR UPDATE EDIT posts-->
+		        <a href="/categories/<%= @category.id %>/posts/<%=x.id%>/edit">Edit</a>
+		        <!-- FOR DELETE posts -->
+		        <form action = "/categories/<%= @category.id %>/posts/<%= x.id %>" method="post">
+			        <input type="hidden" name="_method" value="delete">
+			        <input type = "submit" value = "Delete">
+		        </form>
+		        <br>
+		     <%end%>
+		<%end%>
+	</div>
+
+</div>
+
+
+<br>
+<br>
+
+<!-- RETURN MAIN PAGE-->
+<form action = "/" method="get">
+<input type = "submit" value = "MAIN PAGE">
+</form>

@@ -1,0 +1,25 @@
+
+<div class="container"> 
+	<h1> Welcome to Post: <%= @post.desc %></h1>
+	<p> Content is yet to be filled</p>
+</div>
+
+
+<br>
+<br>
+
+<div align="center">
+<!-- RETURN MAIN CATEGORY PAGE-->
+<form action = "/" method="get">
+<input type = "submit" value = "MAIN PAGE">
+</form>
+
+
+<br>
+<br>
+
+<div align="center">
+<!-- < RETURN CATEGORY POST PAGE-->
+<form action = "/categories/<%=@category.id%>" method="get">
+<input type = "submit" value = "CATEGORY PAGE">
+</form> 

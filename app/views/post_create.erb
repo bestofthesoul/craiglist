@@ -1,0 +1,30 @@
+<br>
+Create New Post:
+<br>
+<br>
+<form action = "/categories/<%= @category.id %>/posts" method="post">
+    New Post Description: <textarea name="new_post[desc]"></textarea>
+    <br>
+   <input type = "submit" value = "Save">
+</form>
+
+
+
+<br>
+<br>
+
+<div align="center">
+<!-- RETURN MAIN CATEGORY PAGE-->
+<form action = "/" method="get">
+<input type = "submit" value = "MAIN PAGE">
+</form>
+
+
+<br>
+<br>
+
+<div align="center">
+<!-- < RETURN CATEGORY POST PAGE-->
+<form action = "/categories/<%=@category.id%>" method="get">
+<input type = "submit" value = "CATEGORY PAGE">
+</form> 

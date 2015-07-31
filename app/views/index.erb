@@ -1,0 +1,41 @@
+
+
+<div class="container"> 
+ 
+ <!-- #UPPER PART --> 
+  <div align="center"><br>
+    <h2>Categories:</h2> 
+      <!-- FOR CREATE NEW -->
+      <form action = "/categories/new" method="get">
+      <input type = "submit" value = "Create New Category">
+      </form>
+    <br>
+  </div>
+
+
+
+<!-- DOWN PART -->
+  <div align="center">
+    <!-- FOR READ INDEX -->
+    <% if @semua %>
+      <% @semua.each do |x| %>
+        <!-- FOR READ SHOW -->
+        <a href="/categories/<%=x.id%>"> <%=x.name%></a> 
+        <!-- FOR UPDATE EDIT -->
+        <a href="/categories/<%=x.id%>/edit">Edit</a> 
+        <!-- FOR DELETE -->
+        <form action = "/categories/<%= x.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type = "submit" value = "Delete">
+        </form>
+        <br>
+      <%end%>
+    <%end%>
+  </div>
+
+
+</div>
+
+
+
+

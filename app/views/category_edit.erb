@@ -1,0 +1,10 @@
+<br>
+Edit this Category: <%= @category.name %>
+<form action = "/categories/<%= @category.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+    <br>
+    <br>
+    New Category Name: <textarea name = "category[name]"><%= @category.name %></textarea>
+    <br>
+   <input type = "submit" value = "Save">
+</form>
